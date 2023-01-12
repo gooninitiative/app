@@ -5,6 +5,8 @@
   "files": [
     "base.json",
     "nextjs.json",
-    "react-library.json"
+    "postcss.config.js",
+    "react-library.json",
+    "tailwind.config.js"
   ]
 }
