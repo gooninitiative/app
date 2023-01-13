@@ -1,10 +1,15 @@
+import Link from "next/link";
 import { Button } from "ui";
 
-export default function Docs() {
+import LayoutAuthenticated from "../layouts/authenticated";
+
+const Admin = () => {
   return (
-    <div>
+    <LayoutAuthenticated>
       <h1>Dashboard</h1>
       <Button />
-    </div>
+    </LayoutAuthenticated>
   );
 }
+
+export default Admin;
