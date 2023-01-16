@@ -4,22 +4,24 @@ import Link from "next/link";
 import css from "./aside.module.css";
 
 interface AsideMenuItemProps {
-  href?: string;
+  href: string;
+  icon?: React.ReactElement;
 }
 
 const AsideMenuItem: React.FC<PropsWithChildren<AsideMenuItemProps>> = ({
   children,
+  icon,
   href,
 }) => {
   return (
     <li>
-      {href ? (
-        <Link href={href} className={css.asideMenuItem}>
-          {children}
-        </Link>
-      ) : (
-        <div className={css.asideMenuItem}>{children}</div>
-      )}
+      <Link href={href} className={css.asideMenuItem}>
+        <span className="item-content flex items-center">
+          {icon}
+          <span className="block ml-4">{children}</span>
+        </span>
+        <span className="item-options flex items-center"></span>
+      </Link>
     </li>
   );
 };
