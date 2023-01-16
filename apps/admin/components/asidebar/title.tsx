@@ -1,9 +1,11 @@
 import React, { PropsWithChildren } from "react";
 
+import css from "./aside.module.css";
+
 export default function AsideTitle({ children }: PropsWithChildren) {
   return (
     <div
-      className="uppercase tracking-widest text-gray-600"
+      className={css.asideMenuTitle}
       style={{
         fontSize: "11px",
         lineHeight: "1",

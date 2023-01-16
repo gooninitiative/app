@@ -17,8 +17,8 @@ const Admin = () => {
       </div>
       <div className="page-content py-6">
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-9 grid grid-cols-12 gap-6">
-            <Card className="col-span-3">
+          <div className="col-span-9 grid grid-cols-12 gap-6 auto-rows-min">
+            <Card className="col-span-3 h-auto">
               <Card.Body>
                 <div className="mb-2 inline-block rounded-md bg-purple-100 p-4 text-purple-900">
                   <DiamondHalf size={20} />
@@ -27,7 +27,7 @@ const Admin = () => {
                 <h6 className="text-xl font-bold">18 000</h6>
               </Card.Body>
             </Card>
-            <Card className="col-span-3">
+            <Card className="col-span-3 h-auto">
               <Card.Body>
                 <div className="mb-2 inline-block rounded-md bg-purple-100 p-4 text-purple-900">
                   <DiamondHalf size={20} />
@@ -36,7 +36,7 @@ const Admin = () => {
                 <h6 className="text-xl font-bold">18 000</h6>
               </Card.Body>
             </Card>
-            <Card className="col-span-3">
+            <Card className="col-span-3 h-auto">
               <Card.Body>
                 <div className="mb-2 inline-block rounded-md bg-purple-100 p-4 text-purple-900">
                   <DiamondHalf size={20} />
@@ -45,7 +45,7 @@ const Admin = () => {
                 <h6 className="text-xl font-bold">18 000</h6>
               </Card.Body>
             </Card>
-            <Card className="col-span-3">
+            <Card className="col-span-3 h-auto">
               <Card.Body>
                 <div className="mb-2 inline-block rounded-md bg-purple-100 p-4 text-purple-900">
                   <DiamondHalf size={20} />

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import Link from "next/link";
 
-import css from "./menu.module.css";
+import css from "./aside.module.css";
 
 interface AsideMenuItemProps {
   href?: string;
@@ -14,11 +14,11 @@ const AsideMenuItem: React.FC<PropsWithChildren<AsideMenuItemProps>> = ({
   return (
     <li>
       {href ? (
-        <Link href={href} className={css.menuItem}>
+        <Link href={href} className={css.asideMenuItem}>
           {children}
         </Link>
       ) : (
-        <div className={css.menuItem}>{children}</div>
+        <div className={css.asideMenuItem}>{children}</div>
       )}
     </li>
   );
