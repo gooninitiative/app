@@ -1,9 +1,19 @@
 import React from "react";
 
-const NavBar = () => {
+type NavBarProps = {
+  asideToggle: () => void;
+};
+
+const NavBar: React.FC<NavBarProps> = ({ asideToggle }) => {
   return (
     <nav>
-      <button>Toggle aside</button>
+      <button
+        onClick={() => {
+          asideToggle();
+        }}
+      >
+        Toggle aside
+      </button>
       <form>
         <input type="text" placeholder="Search anything" />
       </form>

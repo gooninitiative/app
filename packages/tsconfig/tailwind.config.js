@@ -1,3 +1,6 @@
+const colors = require("tailwindcss/colors")
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: [
     "../../packages/ui/components/**/*.{ts,tsx}",
@@ -6,6 +9,9 @@ module.exports = {
     "./pages/**/*.{ts,tsx}"
   ],
   theme: {
+    fontFamily: {
+      sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+    },
     extend: {},
   },
   // plugins: [],
