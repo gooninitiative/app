@@ -8,6 +8,8 @@ type AsideUserBarProps = {};
 const AsideUserBar: React.FC<AsideUserBarProps> = () => {
   const [isExpanded, setExpanded] = useState(false);
 
+  const close = useCallback(() => setExpanded(false), []);
+
   const toggleExpanded = useCallback(() => {
     setExpanded(!isExpanded);
   }, [isExpanded]);
@@ -42,8 +44,9 @@ const AsideUserBar: React.FC<AsideUserBarProps> = () => {
           className={clsx(
             "absolute left-0 right-0 top-full",
             "rounded-b-md bg-inherit",
-            !isExpanded && "hidden",
+            !isExpanded && "hidden"
           )}
+          onClick={close}
         >
           <Link
             href="/"
