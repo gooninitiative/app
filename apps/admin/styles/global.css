@@ -6,7 +6,7 @@
   html,
   body,
   #__next {
-    background-color: #F0F2F5;
     @apply h-full w-full m-0 p-0;
+    background-color: #F0F2F5;
   }
 }

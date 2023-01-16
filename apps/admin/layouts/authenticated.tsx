@@ -26,13 +26,11 @@ const LayoutAuthenticated: React.FC<PropsWithChildren> = ({ children }) => {
       <AsideBar />
 
       {/* Body */}
-      <main>{children}</main>
+      <main className={css.main}>{children}</main>
 
       {/* Footer */}
-      <footer>
-        <div className="container items-center justify-between md:flex">
-          <b>©2023, Goon Initiative.</b>
-        </div>
+      <footer className="container py-6">
+        <p>©2023, Goon Initiative.</p>
       </footer>
     </div>
   );

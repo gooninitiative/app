@@ -1,4 +1,5 @@
 import React from "react";
+import { List } from "react-bootstrap-icons";
 
 type NavBarProps = {
   asideToggle: () => void;
@@ -6,13 +7,13 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({ asideToggle }) => {
   return (
-    <nav>
+    <nav className="container flex items-center justify-between py-8">
       <button
         onClick={() => {
           asideToggle();
         }}
       >
-        Toggle aside
+        <List />
       </button>
       <form>
         <input type="text" placeholder="Search anything" />

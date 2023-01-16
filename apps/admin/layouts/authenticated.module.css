@@ -1,3 +1,7 @@
 .layout {
   @apply h-full xl:pl-60;
 }
+
+.main {
+  @apply container py-6;
+}
