@@ -1,54 +1,36 @@
-import React, { PropsWithChildren } from "react";
-import Link from "next/link";
-import { Button } from "ui";
+import React, { PropsWithChildren, useRef } from "react";
+import clsx from "clsx";
+
+import css from "./authenticated.module.css";
+import NavBar from "../components/navbar";
+import AsideBar from "../components/asidebar";
 
 const LayoutAuthenticated: React.FC<PropsWithChildren> = ({ children }) => {
+  const isAsideMobileExpanded = useRef<boolean>(false);
+
+  const toggleAsideBarExpand = () => {
+    isAsideMobileExpanded.current = !isAsideMobileExpanded.current;
+  };
+
   return (
     <div
-      className="h-full"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "235px 1fr",
-        gridAutoRows: "min-content",
-      }}
+      className={clsx(
+        css.layout,
+        isAsideMobileExpanded.current && "aside-expanded"
+      )}
     >
       {/* Toppanel */}
-      <nav style={{ gridArea: "1 / 2 / 2 / 3" }}>
-        <button>Toggle aside</button>
-        <form>
-          <input type="text" placeholder="Search anything" />
-        </form>
-      </nav>
+      <NavBar asideToggle={toggleAsideBarExpand} />
 
       {/* AsideMenu */}
-      <aside
-        id="aside"
-        className="h-full min-h-screen w-[235px] bg-white"
-        style={{ gridArea: "1 / 1 / 4 / 2" }}
-      >
-        <ul>
-          <li>
-            <Link href="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link href="/analytics">Analytics</Link>
-          </li>
-          <li>
-            <Link href="/posts">Posts</Link>
-          </li>
-        </ul>
-      </aside>
+      <AsideBar />
 
       {/* Body */}
-      <main>{children}</main>
+      <main className={css.main}>{children}</main>
 
       {/* Footer */}
-      <footer>
-        <div className="block items-center justify-between md:flex">
-          <div className="text-left">
-            <b>©2023, Goon Initiative.</b>
-          </div>
-        </div>
+      <footer className="container py-6">
+        <p>©2023, Goon Initiative.</p>
       </footer>
     </div>
   );
