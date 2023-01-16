@@ -1,11 +1,13 @@
 import React, { PropsWithChildren } from "react";
 
-import NavBar from "@/components/navbar";
-import AsideBar from "@/components/asidebar";
+import css from "./authenticated.module.css";
+import NavBar from "../components/navbar";
+import AsideBar from "../components/asidebar";
 
 const LayoutAuthenticated: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="h-full pl-60">
+    // pl-60
+    <div className={css.layout}>
       {/* Toppanel */}
       <NavBar />
 
@@ -17,10 +19,8 @@ const LayoutAuthenticated: React.FC<PropsWithChildren> = ({ children }) => {
 
       {/* Footer */}
       <footer>
-        <div className="block items-center justify-between md:flex">
-          <div className="text-left">
+        <div className="container mx-auto items-center justify-between md:flex">
             <b>©2023, Goon Initiative.</b>
-          </div>
         </div>
       </footer>
     </div>

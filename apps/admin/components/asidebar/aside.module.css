@@ -1,4 +1,4 @@
 .aside {
-  @apply fixed top-0 left-0 bottom-0 w-60;
+  @apply fixed top-0 left-0 bottom-0 w-60 -translate-x-60 xl:!translate-x-0;
   @apply bg-white;
 }
