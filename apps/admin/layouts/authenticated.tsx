@@ -1,43 +1,16 @@
 import React, { PropsWithChildren } from "react";
-import Link from "next/link";
-import { Button } from "ui";
+
+import NavBar from "@/components/navbar";
+import AsideBar from "@/components/asidebar";
 
 const LayoutAuthenticated: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div
-      className="h-full"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "235px 1fr",
-        gridAutoRows: "min-content",
-      }}
-    >
+    <div className="h-full pl-60">
       {/* Toppanel */}
-      <nav style={{ gridArea: "1 / 2 / 2 / 3" }}>
-        <button>Toggle aside</button>
-        <form>
-          <input type="text" placeholder="Search anything" />
-        </form>
-      </nav>
+      <NavBar />
 
       {/* AsideMenu */}
-      <aside
-        id="aside"
-        className="h-full min-h-screen w-[235px] bg-white"
-        style={{ gridArea: "1 / 1 / 4 / 2" }}
-      >
-        <ul>
-          <li>
-            <Link href="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link href="/analytics">Analytics</Link>
-          </li>
-          <li>
-            <Link href="/posts">Posts</Link>
-          </li>
-        </ul>
-      </aside>
+      <AsideBar />
 
       {/* Body */}
       <main>{children}</main>
